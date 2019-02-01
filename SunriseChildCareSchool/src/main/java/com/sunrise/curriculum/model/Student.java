@@ -19,11 +19,14 @@ public class Student {
 	private String className;
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinTable(name="student_class", joinColumns=@JoinColumn(name="student_id"), inverseJoinColumns=@JoinColumn(name="class_id"))
-	private Set<StudentClass> studentsClass;
+	private StudentClass studentClass;
 	
 	
 	
 	
+	public Student() {
+		super();
+	}
 	public int getStudent_id() {
 		return student_id;
 	}
@@ -48,14 +51,16 @@ public class Student {
 	public void setClassName(String className) {
 		this.className = className;
 	}
-	public Set<StudentClass> getStudentsClass() {
-		return studentsClass;
+	public StudentClass getStudentClass() {
+		return studentClass;
 	}
-	public void setStudentsClass(Set<StudentClass> studentsClass) {
-		this.studentsClass = studentsClass;
+	public void setStudentClass(StudentClass studentClass) {
+		this.studentClass = studentClass;
 	}
 	
 	
+	
+
 	
 	
 	

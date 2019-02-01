@@ -17,9 +17,25 @@ public class StudentClass {
 	@GeneratedValue
 	private int class_id;
 	private String studentclass;
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinTable(name="class_curriculum", joinColumns=@JoinColumn(name="class_id"), inverseJoinColumns=@JoinColumn(name="curriculum_id"))
-	private Set<Curriculum> curriculums;
+	
+	
+	public StudentClass() {
+		super();
+	}
+	public int getClass_id() {
+		return class_id;
+	}
+	public void setClass_id(int class_id) {
+		this.class_id = class_id;
+	}
+	public String getStudentclass() {
+		return studentclass;
+	}
+	public void setStudentclass(String studentclass) {
+		this.studentclass = studentclass;
+	}
+		
+	
 	
 	
 }
